@@ -1,3 +1,7 @@
 return {
-	{ 'stevedylandev/flexoki-nvim', name = 'flexoki' }
+    { 
+        "folke/tokyonight.nvim",
+        lazy = true,
+        opts = { style = "dark" },
+    }
 }
