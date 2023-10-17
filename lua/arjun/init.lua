@@ -25,3 +25,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
+if package.config:sub(1,1) == '\\' then
+    vim.opt.shell = "cmd.exe"
+end
