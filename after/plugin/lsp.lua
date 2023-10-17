@@ -13,7 +13,6 @@ require('mason').setup({
     PATH = "prepend"
 })
 require('mason-lspconfig').setup({
-  ensure_installed = { "eslint, tsserver" },
   handlers = {
     lsp_zero.default_setup,
   },
