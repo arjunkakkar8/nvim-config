@@ -5,5 +5,5 @@
 --nnoremap <leader>s :Neotree float git_status<cr>
 
 vim.keymap.set('n', '|', ':Neotree toggle left reveal_force_cwd<cr>')
-vim.keymap.set('n', '<leader>b', ':Neotree float buffers left<cr>')
+vim.keymap.set('n', '<leader>b', ':Neotree float buffers<cr>')
 vim.keymap.set('n', '<leader>s', ':Neotree float git_status<cr>')
