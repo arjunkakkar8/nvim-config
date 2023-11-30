@@ -5,7 +5,6 @@ require("conform").setup({
         javascript = { "prettierd" },
         scss = { "prettierd" },
         ts = { "prettierd" },
-        ["_"] = { "prettierd" },
     },
     format_on_save = {
         timeout_ms = 500,
