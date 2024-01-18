@@ -33,4 +33,3 @@ quarto.setup({
 vim.keymap.set('n', '<leader>qp', quarto.quartoPreview, { silent = true, noremap = true })
 vim.g.R_auto_start = 2
 vim.g.R_objbr_auto_start = 1
-vim.g.R_objbr_place = 'console,above'
