@@ -32,4 +32,7 @@ quarto.setup({
 
 vim.keymap.set('n', '<leader>qp', quarto.quartoPreview, { silent = true, noremap = true })
 vim.g.R_auto_start = 2
+vim.g.R_rconsole_width = 0
+vim.g.R_rconsole_height = 15
 vim.g.R_objbr_auto_start = 1
+vim.g.R_objbr_place = "script,right"
