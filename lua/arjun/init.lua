@@ -1,5 +1,4 @@
 vim.opt.nu = true
-vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -8,7 +7,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -26,12 +25,12 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-if package.config:sub(1,1) == '\\' then
+if package.config:sub(1, 1) == '\\' then
     vim.opt.shell = "cmd.exe"
 end
 
 vim.filetype.add({
-  extension = {
-    postcss = 'scss',
-  }
+    extension = {
+        postcss = 'scss',
+    }
 })
