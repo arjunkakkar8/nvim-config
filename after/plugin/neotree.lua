@@ -4,7 +4,6 @@
 --nnoremap <leader>b :Neotree toggle show buffers right<cr>
 --nnoremap <leader>s :Neotree float git_status<cr>
 
-vim.keymap.set('n', 't', ':Neotree left reveal_force_cwd<cr>')
 vim.keymap.set('n', '<leader>s', ':Neotree float git_status<cr>')
 
 require('neo-tree').setup({
