@@ -1,3 +1,5 @@
+require('arjun.keymaps')
+
 vim.opt.nu = true
 
 vim.opt.tabstop = 4
