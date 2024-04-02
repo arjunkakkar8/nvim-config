@@ -12,9 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "        -- Make sure to set `mapleader` before lazy so your mappings are correct
-vim.g.loaded_netrw = 1       -- Disable netrw
-vim.g.loaded_netrwPlugin = 1 -- Disable netrw
+vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup("plugins")
 require("arjun")
