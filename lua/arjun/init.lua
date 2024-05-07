@@ -27,6 +27,8 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.opt.clipboard = "unnamedplus"
+
 if package.config:sub(1, 1) == '\\' then
     vim.opt.shell = "cmd.exe"
 end
