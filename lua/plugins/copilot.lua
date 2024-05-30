@@ -1,18 +1,6 @@
 return {
-    "zbirenbaum/copilot.lua",
+    "supermaven-inc/supermaven-nvim",
     config = function()
-        require("copilot").setup({
-            suggestion = {
-                auto_trigger = true,
-                keymap = {
-                    accept = "<Tab>",
-                    next = "<C-right>",
-                    prev = "<C-left>",
-                },
-            },
-            filetypes = {
-                ["*"] = true,
-            },
-        })
+        require("supermaven-nvim").setup({})
     end,
 }
