@@ -46,5 +46,6 @@ cmp.setup({
         { name = 'luasnip' },
         { name = 'otter' },
         { name = 'buffer' },
+        { name = 'supermaven' },
     },
 })
