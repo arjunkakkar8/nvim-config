@@ -19,6 +19,16 @@ require('mason-lspconfig').setup({
         lsp_zero.default_setup,
     },
 })
+require('lspconfig').cssls.setup({
+  settings = {
+    css = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    },
+  }
+})
 
 -- Autocomplete actions
 
