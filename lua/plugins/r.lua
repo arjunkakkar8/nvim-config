@@ -1,18 +1,16 @@
 return {
-  {
+   {
     "R-nvim/R.nvim",
+    lazy = false,
     config = function()
       local opts = {
-        R_args = { "--quiet", "--no-save" },
         hook = {
           on_filetype = function()
-            -- This function will be called at the FileType event
-            -- of files supported by R.nvim. This is an
-            -- opportunity to create mappings local to buffers.
-            vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {})
-            vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {})
+            vim.api.nvim_buf_set_keymap(0, "n", "f", "<Plug>RDSendLine", {})
+            vim.api.nvim_buf_set_keymap(0, "v", "f", "<Plug>RSendSelection", {})
           end
         },
+        R_args = { "--quiet", "--no-save" },
         disable_cmds = {
           "RClearConsole",
           "RCustomStart",
@@ -27,15 +25,14 @@ return {
 
       require("r").setup(opts)
     end,
-    lazy = false
   },
   {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        sync_install = true,
         ensure_installed = { "markdown", "markdown_inline", "r", "rnoweb" },
+        highlight = { enable = true },
       })
     end
   },
