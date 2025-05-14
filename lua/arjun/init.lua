@@ -31,10 +31,4 @@ if package.config:sub(1, 1) == '\\' then
   vim.opt.shell = "cmd.exe"
 end
 
-vim.filetype.add({
-  extension = {
-    postcss = 'scss',
-  }
-})
-
 vim.keymap.set("n", "tc", ":tabclose<CR>", { silent = true })
