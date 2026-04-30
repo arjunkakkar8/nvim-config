@@ -1,7 +1,7 @@
 return {
   {
     'quarto-dev/quarto-nvim',
-    ft = { 'quarto', 'markdown', 'rmd', 'qmd' },
+    ft = { 'quarto', 'rmd', 'qmd' },
     dependencies = {
       'jmbuhr/otter.nvim',
       'jpalardy/vim-slime',

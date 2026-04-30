@@ -1,23 +1,15 @@
 return {
   {
+    'williamboman/mason.nvim',
+    cmd = 'Mason',
+    opts = {
+      PATH = "prepend",
+    },
+  },
+  {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = {
-      { 'williamboman/mason.nvim', cmd = 'Mason' },
-      'williamboman/mason-lspconfig.nvim',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/nvim-cmp',
-    },
     config = function()
-      require('mason').setup({
-        PATH = "prepend"
-      })
-
-      require("mason-lspconfig").setup({
-        ensure_installed = vim.g.lsps or {},
-        automatic_enable = true,
-      })
-
       vim.api.nvim_create_autocmd('LspAttach', {
         desc = 'LSP actions',
         callback = function(event)
@@ -44,6 +36,33 @@ return {
         },
       })
 
+      local servers = vim.g.lsps or {
+        'cssls',
+        'dockerls',
+        'eslint',
+        'glsl_analyzer',
+        'html',
+        'jsonls',
+        'lua_ls',
+        'pylsp',
+        'ruff',
+        'rust_analyzer',
+        'svelte',
+        'tailwindcss',
+        'ts_ls',
+        'yamlls',
+      }
+
+      vim.lsp.enable(servers)
+    end,
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+    },
+    config = function()
       local cmp = require('cmp')
 
       cmp.setup({

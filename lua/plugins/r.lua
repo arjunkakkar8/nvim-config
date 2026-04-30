@@ -17,8 +17,8 @@ return {
           "RSPlot",
           "RSaveClose",
         },
-        auto_start = "always",
-        objbr_auto_start = true,
+        auto_start = false,
+        objbr_auto_start = false,
         rconsole_width = 0,
         rconsole_height = 15,
       }
