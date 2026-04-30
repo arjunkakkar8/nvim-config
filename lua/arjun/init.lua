@@ -26,6 +26,24 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.autoread = true
 
+local autoread_group = vim.api.nvim_create_augroup("Autoread", { clear = true })
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  group = autoread_group,
+  callback = function()
+    if vim.fn.mode() ~= "c" then
+      vim.cmd("silent! checktime")
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  group = autoread_group,
+  callback = function()
+    vim.notify("File changed on disk. Buffer reloaded.", vim.log.levels.INFO)
+  end,
+})
+
 vim.opt.clipboard = "unnamedplus"
 
 if package.config:sub(1, 1) == '\\' then
