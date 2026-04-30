@@ -1,7 +1,7 @@
 return {
   {
     "R-nvim/R.nvim",
-    lazy = false,
+    ft = { "r", "rmd", "quarto", "qmd" },
     config = function()
       local opts = {
         hook = {
