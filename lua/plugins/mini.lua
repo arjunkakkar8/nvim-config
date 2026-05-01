@@ -7,7 +7,9 @@ return {
       {
         '<leader>t',
         function()
-          require('mini.files').open()
+          local buf_name = vim.api.nvim_buf_get_name(0)
+          local path = buf_name ~= '' and vim.fn.filereadable(buf_name) == 1 and buf_name or nil
+          require('mini.files').open(path)
         end,
         desc = 'Open file viewer',
         silent = true,
